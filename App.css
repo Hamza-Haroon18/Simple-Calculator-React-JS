@@ -1,0 +1,140 @@
+
+.App {
+  text-align: center;
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.gpa-calculator {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  padding: 40px 50px;
+  width: 100%;
+  max-width: 800px;
+  transition: transform 0.3s ease;
+}
+
+.gpa-calculator:hover {
+  transform: translateY(-5px);
+}
+
+.gpa-calculator h2 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  font-size: 16px;
+}
+
+thead th {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 12px 15px;
+  font-weight: 600;
+  border-radius: 10px 10px 0 0;
+}
+
+tbody td {
+  background-color: #f7f9fc;
+  padding: 12px 10px;
+  text-align: center;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+tbody tr:hover td {
+  background-color: #e1ecf9;
+}
+
+input[type="text"], input[type="number"], select {
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 10px rgba(37, 117, 252, 0.3);
+  outline: none;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button.add {
+  background-color: #27ae60;
+  color: white;
+}
+
+button.add:hover {
+  background-color: #2ecc71;
+}
+
+button.remove {
+  background-color: #e74c3c;
+  color: white;
+}
+
+button.remove:hover {
+  background-color: #c0392b;
+}
+
+h3 {
+  margin-top: 25px;
+  font-size: 1.8rem;
+  color: #34495e;
+  font-weight: 700;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .gpa-calculator {
+    padding: 30px 20px;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
